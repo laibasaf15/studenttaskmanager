@@ -4,7 +4,7 @@ tasks = []
 
 def add_task(title):
     task = {
-        "id": len(tasks) + 1,
+        "id": max((task["id"] for task in tasks), default=0) + 1,
         "title": title,
         "completed": False
     }
