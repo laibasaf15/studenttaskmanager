@@ -32,13 +32,25 @@ def display_tasks():
             f'Status: {status}'
         )
 
+def complete_task(task_id):
+    for task in tasks:
+       if task["id"] == task_id:
+        if task["completed"]:
+            return False
+        task["completed"] = True
+        return True
+
+    return False
+
 
 def main():
     while True:
         print("\n===== Student Task Manager =====")
         print("1. Add Task")
         print("2. Display Tasks")
-        print("3. Exit")
+        print("3. Complete Task")
+        print("4. Exit")
+        
 
         choice = input("Enter your choice: ")
         if choice == "1":
@@ -51,8 +63,16 @@ def main():
         
         elif choice == "2":
             display_tasks()
-
         elif choice == "3":
+            try:
+                task_id = int(input("Enter task ID to complete: "))
+                if complete_task(task_id):
+                    print("Task marked as completed!")
+            except ValueError:
+                print("Please enter a valid numeric task ID.")
+            except ValueError:
+                print("Please enter a valid numeric task ID.")
+        elif choice == "4":
             print("Exiting Student Task Manager. Goodbye!")
             break
 
