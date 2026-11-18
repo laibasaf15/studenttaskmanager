@@ -8,7 +8,7 @@ def add_task(title):
 
     task = {
         "id": len(tasks) + 1,
-        "title": title,
+        "title": title.strip(),
         "completed": False
     }
 
