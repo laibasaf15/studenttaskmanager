@@ -14,7 +14,7 @@ class TestTaskManager(unittest.TestCase):
         self.assertEqual(len(task_manager.tasks), 1)
         self.assertEqual(
             task_manager.tasks[0]["title"],
-            "Wrong assignment"
+            "Complete assignment"
         )
 
     def test_add_empty_task(self):
