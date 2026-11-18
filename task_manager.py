@@ -3,14 +3,17 @@ tasks = []
 
 
 def add_task(title):
+    if not title.strip():
+        return False
+
     task = {
         "id": len(tasks) + 1,
-        "title": title,
+        "title": title.strip(),
         "completed": False
     }
 
     tasks.append(task)
-    print("Task added successfully!")
+    return True
 
 
 def display_tasks():
@@ -38,11 +41,14 @@ def main():
         print("3. Exit")
 
         choice = input("Enter your choice: ")
-
         if choice == "1":
             title = input("Enter task title: ")
-            add_task(title)
+            if add_task(title):
+                print("Task added successfully!")
+            else:
+                print("Task title cannot be empty!")
 
+        
         elif choice == "2":
             display_tasks()
 
