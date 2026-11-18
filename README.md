@@ -19,4 +19,4 @@ The Student Task Manager allows students to add, view, complete, and delete task
 - Display all tasks
 - Mark tasks as completed
 - Delete tasks using task IDs
-Project status: Planning
+Project status: In Development
